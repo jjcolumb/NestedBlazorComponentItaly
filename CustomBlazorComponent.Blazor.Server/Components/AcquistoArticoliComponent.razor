@@ -1,0 +1,129 @@
+﻿@using CustomBlazorComponent.Module.BusinessObjects
+@using CustomBlazorComponent.Module.BusinessObjects.NonPersistent
+@using DevExpress.ExpressApp
+
+@inject DevExpress.ExpressApp.Blazor.Services.IXafApplicationProvider ApplicationProvider
+
+
+<div>
+    <label><b>1. </b> Impostare il filtro...</label>
+</div>
+<div>
+    <label><b>2. </b> Impostare il filtro...</label>
+</div>
+<div>
+    <label><b>3. </b> Aplicare il filtro...</label>
+</div>
+<div>
+    <label><b>4. </b> Ripetere il punti...</label>
+</div>
+<div>
+    <label><b>5. </b> Premere OK...</label>
+</div>
+
+@if(AcquistoArticoli != null)
+{
+    <DxFormLayout>
+        <DxFormLayoutGroup Caption="Selezione Articolo" ColSpanMd="12">
+            <DxFormLayoutItem Caption="Articolo:" ColSpanMd="12">
+                <DxComboBox TData="Articolo" TValue="Articolo"
+                            Data="@Articolos"
+                            TextFieldName="@nameof(Articolo.Name)"
+                            @bind-Value="@AcquistoArticoli.Articolo">
+                </DxComboBox>
+            </DxFormLayoutItem>
+            <DxFormLayoutItem Caption="Attributi" ColSpanMd="12">
+                @*                 TODO: Change this for a grid *@
+                <DxTextBox Text="Attributi"></DxTextBox>
+            </DxFormLayoutItem>
+            <DxFormLayoutItem Caption="Descrizione" ColSpanMd="12">
+                <DxTextBox @bind-Text="@AcquistoArticoli.Descrizione"></DxTextBox>
+            </DxFormLayoutItem>
+            <DxFormLayoutItem Caption="Quantita" ColSpanMd="12">
+                <DxSpinEdit @bind-Value="@AcquistoArticoli.Quantita" />
+            </DxFormLayoutItem>
+        </DxFormLayoutGroup>
+        <DxFormLayoutGroup Caption="Opzioni movimenti">
+            <DxFormLayoutItem Caption="Persone:" ColSpanMd="12">
+                <DxComboBox TData="ApplicationUser" TValue="ApplicationUser"
+                            Data="@Users"
+                            TextFieldName="@nameof(ApplicationUser.UserName)"
+                            @bind-Value="@AcquistoArticoli.Persone">
+                </DxComboBox>
+            </DxFormLayoutItem>
+            <DxFormLayoutItem Caption="Debitore:" ColSpanMd="12">
+                <DxComboBox TData="ApplicationUser" TValue="ApplicationUser"
+                            Data="@Users"
+                            TextFieldName="@nameof(ApplicationUser.UserName)"
+                            @bind-Value="@AcquistoArticoli.Debitore">
+                </DxComboBox>
+            </DxFormLayoutItem>
+            <DxFormLayoutItem Caption="Data emissione:" ColSpanMd="6">
+                <DxDateEdit @bind-Date="AcquistoArticoli.DataEmissione"></DxDateEdit>
+            </DxFormLayoutItem>
+            <DxFormLayoutItem Caption="Data scadenza:" ColSpanMd="6">
+                <DxDateEdit @bind-Date="AcquistoArticoli.DataScadenza"></DxDateEdit>
+            </DxFormLayoutItem>
+        </DxFormLayoutGroup>
+
+        <div class="d-flex justify-content-center">
+                <DxButton Text="Aggiungi" RenderStyle="ButtonRenderStyle.Secondary"></DxButton>
+
+                <DxButton Text="Rimuovi" RenderStyle="ButtonRenderStyle.Secondary"></DxButton>
+        </div>
+            
+
+
+        <DxGrid @ref="Grid"
+                Data="AcquistoArticoli.Items"
+                ShowFilterRow="true"
+                SelectAllCheckboxMode="CurrentSelectAllCheckboxMode"
+                @bind-SelectedDataItems="SelectedDataItems"
+                style="padding-top:10px;"
+                FooterDisplayMode="GridFooterDisplayMode.Always">
+            <Columns>
+                <DxGridSelectionColumn Width="60px" />
+                <DxGridDataColumn TextAlignment="GridTextAlignment.Left" FieldName="@nameof(GridItems.Portafoglio)" MinWidth="150" />
+                <DxGridDataColumn TextAlignment="GridTextAlignment.Left" FieldName="@nameof(GridItems.Debitore)" MinWidth="150" />
+                <DxGridDataColumn TextAlignment="GridTextAlignment.Left" FieldName="@nameof(GridItems.Descrizione)" MinWidth="150" />
+                <DxGridDataColumn TextAlignment="GridTextAlignment.Left" FieldName="@nameof(GridItems.Causale)" MinWidth="150" />
+                <DxGridDataColumn TextAlignment="GridTextAlignment.Left" FieldName="@nameof(GridItems.DataEmissione)" MinWidth="150" />
+                <DxGridDataColumn TextAlignment="GridTextAlignment.Left" FieldName="@nameof(GridItems.Data)" MinWidth="150" />
+                <DxGridDataColumn TextAlignment="GridTextAlignment.Left" FieldName="@nameof(GridItems.Quantita)" MinWidth="150" />
+                <DxGridDataColumn TextAlignment="GridTextAlignment.Left" FieldName="@nameof(GridItems.ImportoTotale)" MinWidth="150" />
+
+            </Columns>
+        </DxGrid>
+
+    </DxFormLayout>
+}
+
+<style>
+    .alignright{
+        align-content:end;
+    }
+</style>
+
+    
+
+
+@code {
+    [Parameter]
+    public AcquistoArticoli AcquistoArticoli { get; set; }
+
+
+    public IObjectSpace Objectspace { get; set; }
+    public IEnumerable<Articolo> Articolos { get; set; }
+    public IEnumerable<ApplicationUser> Users { get; set; }
+    IGrid Grid { get; set; }
+    GridSelectAllCheckboxMode CurrentSelectAllCheckboxMode { get; set; }
+    IReadOnlyList<object> SelectedDataItems { get; set; }
+
+    protected override void OnInitialized()
+    {
+        base.OnInitialized();
+        Objectspace = ApplicationProvider.GetApplication().CreateObjectSpace(typeof(Articolo));
+        Articolos = Objectspace.GetObjects<Articolo>().ToList();
+        Users = Objectspace.GetObjects<ApplicationUser>().ToList();
+    }
+}

@@ -1,0 +1,8 @@
+﻿<DxButton Text=@ComponentModel.Text Click=@(() => ComponentModel.ClickFromUI()) />
+
+@code {
+        [Parameter]
+    public MovimentiAggiungiButtonModel ComponentModel { get; set; }
+    public static RenderFragment Create(MovimentiAggiungiButtonModel componentModel) =>
+        @<MovimentiAggiungiButton ComponentModel=@componentModel />;
+}

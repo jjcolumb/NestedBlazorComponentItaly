@@ -1,0 +1,9 @@
+﻿@using CustomBlazorComponent.Blazor.Server.Components
+
+<AcquistoArticoliComponent AcquistoArticoli="ComponentModel.AcquistoArticoli"></AcquistoArticoliComponent>
+
+@code {
+    [Parameter]
+    public AcquistoArticoliModel ComponentModel { get; set; }
+    public static RenderFragment Create(AcquistoArticoliModel componentModel) => @<AcquistoArticoliRenderer ComponentModel=@componentModel />;
+}

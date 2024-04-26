@@ -1,0 +1,30 @@
+﻿@using CustomBlazorComponent.Module.BusinessObjects
+@using DevExpress.ExpressApp
+<DxTextBox @bind-Text="ComponentModel.Value"
+           CssClass="dx-demo-editor-width">
+    <Buttons>
+        <DxEditorButton 
+                        Tooltip="Seleziona Persona"
+                        Click="OpenPersonaModal">
+            <img style="width:20px; height:20px;" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAB4AAAAeCAYAAAA7MK6iAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAcElEQVR4nO2RMQqAMBAE5yGm9u2KkI+pmHxAm7M5QiBw6XZgqxumORBCCDFIAg6g2jKwznYTcAGv2203Hwpzj8bx3+5ioW7tCMXFQt3aEZ6B2LCbO8LmYqHuag/3xxNYXCzcTfbwYtsaodmuEEIImny615Rj1YkBLAAAAABJRU5ErkJggg==">
+         </DxEditorButton>
+    </Buttons>
+</DxTextBox>
+
+@code {
+            [Parameter]
+    public AssegnataryHolderModel ComponentModel { get; set; }
+    public static RenderFragment Create(AssegnataryHolderModel componentModel) => @<AssegnatariHolderRenderer ComponentModel=@componentModel />;
+
+    private void OpenPersonaModal()
+    {
+        IObjectSpace obs = ComponentModel.Application.CreateObjectSpace(typeof(Persona));
+        Persona newPersona = obs.CreateObject<Persona>();
+
+        DetailView personaView = ComponentModel.Application.CreateDetailView(obs, "Persona_DetailView", false, newPersona);
+        ComponentModel.Application.ShowViewStrategy.ShowViewInPopupWindow(personaView, () =>
+        {
+            ComponentModel.Value = $"{newPersona.Selected.ToList().Count} personne";
+        }, null, "OK", "Annulla");
+    }
+}

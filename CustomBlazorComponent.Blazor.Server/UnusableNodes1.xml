@@ -1,0 +1,19 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Application>
+  <Views Id="Views">
+    <DetailView Id="AcquistoArticoli_DetailView">
+      <Layout Id="Layout">
+        <LayoutGroup Id="Main">
+          <LayoutGroup Id="SimpleEditors">
+            <LayoutGroup Id="AcquistoArticoli">
+              <LayoutItem Id="ShowView" RelativeSize="100" ShowCaption="False" />
+              <LayoutItem Id="Articolo" RelativeSize="95.35519125683061" Removed="True" />
+              <LayoutItem Id="Descrizione" RelativeSize="91.80327868852459" Removed="True" />
+              <LayoutItem Id="Quantita" Removed="True" />
+            </LayoutGroup>
+          </LayoutGroup>
+        </LayoutGroup>
+      </Layout>
+    </DetailView>
+  </Views>
+</Application>

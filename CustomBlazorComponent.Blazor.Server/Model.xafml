@@ -1,0 +1,156 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Application>
+  <NavigationItems NavigationStyle="Accordion" />
+  <SchemaModules>
+    <SchemaModule Name="SystemModule" Version="23.2.3.0" IsNewNode="True" />
+  </SchemaModules>
+  <Views DefaultListEditor="DevExpress.ExpressApp.Blazor.Editors.DxGridListEditor">
+    <DetailView Id="AcquistoArticoli_DetailView">
+      <Layout>
+        <LayoutGroup Id="Main" RelativeSize="100">
+          <LayoutGroup Id="SimpleEditors" RelativeSize="100" Direction="Vertical">
+            <LayoutGroup Id="AcquistoArticoli_col1" ShowCaption="False" Index="0" RelativeSize="100" Caption="AcquistoArticoli_col1" IsNewNode="True">
+              <LayoutItem Id="ShowView" ViewItem="ShowView" Index="0" RelativeSize="100" ShowCaption="False" IsNewNode="True" />
+            </LayoutGroup>
+            <LayoutGroup Id="AcquistoArticoli" RelativeSize="100" Caption="AcquistoArticoli" Removed="True" />
+          </LayoutGroup>
+          <LayoutGroup Id="Items_Group" Removed="True" />
+        </LayoutGroup>
+      </Layout>
+    </DetailView>
+    <DetailView Id="Movimenti_DetailView" Caption="Seleziona movimenti" ImageName="">
+      <Items>
+        <MovimentiAggiungiButtonViewItem Id="Agiungi" IsNewNode="True" />
+        <MovimentiHeaderViewItem Id="MovimentiHeader" IsNewNode="True" />
+        <PropertyEditor Id="Oid" PropertyEditorType="CustomBlazorComponent.Blazor.Server.Editors.RegistraPagamentiPropertyEditor.RegistraPagamentiPropertyEditor" />
+        <MovimentiRimuoviButtonViewItem Id="Rimuovi" IsNewNode="True" />
+      </Items>
+      <Layout>
+        <LayoutGroup Id="Main" RelativeSize="4.808743169398907" Caption="Main">
+          <LayoutItem Id="MovimentiHeader" ViewItem="MovimentiHeader" Index="0" RelativeSize="100" IsNewNode="True" />
+          <LayoutGroup Id="SimpleEditors" RelativeSize="29.46793997271487" Removed="True">
+            <LayoutGroup Id="Movimenti" Removed="True" />
+          </LayoutGroup>
+          <TabbedGroup Id="Tabs" RelativeSize="66.66666666666667" Removed="True">
+            <LayoutGroup Id="GridItems" Index="0" RelativeSize="100">
+              <LayoutItem Id="GridItems" RelativeSize="100" />
+            </LayoutGroup>
+            <LayoutGroup Id="Assegnatari" Removed="True" />
+          </TabbedGroup>
+        </LayoutGroup>
+        <LayoutGroup Id="Item1" ShowCaption="True" CaptionLocation="Top" Index="1" RelativeSize="30.81967213114754" Caption="Filtro" Direction="Vertical" IsNewNode="True">
+          <LayoutGroup Id="Autod681220f-849d-449a-907a-3f5123204e65" ShowCaption="False" Caption="Autod681220f-849d-449a-907a-3f5123204e65(9)" Direction="Horizontal" Index="0" RelativeSize="15.873015873015873" IsNewNode="True">
+            <LayoutItem Id="Data" ViewItem="Data" Index="0" RelativeSize="30.068337129840547" CaptionLocation="Left" IsNewNode="True" />
+            <LayoutItem Id="Inizio" ViewItem="Inizio" Index="1" RelativeSize="34.39635535307517" CaptionLocation="Left" IsNewNode="True" />
+            <LayoutItem Id="Fine" ViewItem="Fine" Index="2" RelativeSize="35.535307517084284" CaptionLocation="Left" IsNewNode="True" />
+          </LayoutGroup>
+          <LayoutGroup Id="Auto93ed81d2-d1b7-4dc3-a095-9895f247a754" ShowCaption="False" Caption="Auto93ed81d2-d1b7-4dc3-a095-9895f247a754(13)" Direction="Horizontal" Index="1" RelativeSize="15.079365079365079" IsNewNode="True">
+            <LayoutItem Id="Documenti" ViewItem="Documenti" Index="0" RelativeSize="49.88610478359909" CaptionLocation="Left" IsNewNode="True" />
+            <LayoutItem Id="Saldo" ViewItem="Saldo" Index="1" RelativeSize="50.11389521640091" CaptionLocation="Left" IsNewNode="True" />
+          </LayoutGroup>
+          <LayoutItem Id="Categorie" ViewItem="Categorie" Index="2" RelativeSize="10.317460317460318" CaptionLocation="Left" IsNewNode="True" />
+          <LayoutItem Id="Causali" ViewItem="Causali" Index="3" RelativeSize="10.317460317460318" CaptionLocation="Left" IsNewNode="True" />
+          <LayoutItem Id="PianiPagamento" ViewItem="PianiPagamento" Index="4" RelativeSize="10.317460317460318" CaptionLocation="Left" IsNewNode="True" />
+          <LayoutItem Id="Eventi" ViewItem="Eventi" Index="5" RelativeSize="10.317460317460318" CaptionLocation="Left" IsNewNode="True" />
+          <LayoutItem Id="Articoli" ViewItem="Articoli" Index="6" RelativeSize="10.317460317460318" CaptionLocation="Left" IsNewNode="True" />
+          <LayoutGroup Id="Autof5f58752-078f-41e7-82de-145872bd62f9" ShowCaption="False" Caption="Autof5f58752-078f-41e7-82de-145872bd62f9(16)" Direction="Horizontal" Index="7" RelativeSize="17.46031746031746" IsNewNode="True">
+            <LayoutItem Id="AssegnataryHoder" ViewItem="AssegnataryHoder" Index="0" RelativeSize="49.88610478359909" CaptionLocation="Left" IsNewNode="True" />
+            <LayoutItem Id="Strumenti" ViewItem="Strumenti" Index="1" RelativeSize="50.11389521640091" CaptionLocation="Left" IsNewNode="True" />
+          </LayoutGroup>
+        </LayoutGroup>
+        <LayoutGroup Id="Auto56d922d0-196b-4c37-b7df-3bbf107407c4" ShowCaption="False" Caption="Auto56d922d0-196b-4c37-b7df-3bbf107407c4(19)" Direction="Horizontal" Index="2" RelativeSize="4.590163934426229" IsNewNode="True">
+          <LayoutItem Id="Agiungi" ViewItem="Agiungi" Index="0" RelativeSize="49.889380530973455" IsNewNode="True" />
+          <LayoutItem Id="Rimuovi" ViewItem="Rimuovi" Index="1" RelativeSize="50.110619469026545" IsNewNode="True" />
+        </LayoutGroup>
+        <TabbedGroup Id="Tabs" Index="3" RelativeSize="59.78142076502732" IsNewNode="True">
+          <LayoutGroup Id="GridItems" ShowCaption="True" Caption="Grid Items" Index="0" RelativeSize="100" IsNewNode="True">
+            <LayoutItem Id="GridItems" ShowCaption="False" ViewItem="GridItems" Index="0" RelativeSize="100" IsNewNode="True" />
+          </LayoutGroup>
+        </TabbedGroup>
+      </Layout>
+    </DetailView>
+    <ListView Id="Movimenti_GridItems_ListView">
+      <Columns>
+        <ColumnInfo Id="Data" Index="-1" />
+        <ColumnInfo Id="Portafoglio" Index="-1" />
+        <ColumnInfo Id="Quantita" Index="-1" SortIndex="0" SortOrder="Ascending" />
+        <ColumnInfo Id="DataEmissione" Index="0" />
+        <ColumnInfo Id="DataScadenza" Index="1" />
+        <ColumnInfo Id="Causale" Index="2" />
+        <ColumnInfo Id="Descrizione" Index="3" />
+        <ColumnInfo Id="Assegnatario" Index="4" />
+        <ColumnInfo Id="Debitore" Index="5" />
+        <ColumnInfo Id="ImportoTotale" Index="6" Caption="Importo" />
+        <ColumnInfo Id="Saldo" Index="7" />
+      </Columns>
+    </ListView>
+    <DetailView Id="Persona_DetailView">
+      <Items>
+        <PropertyEditor Id="Movimentii" Caption="Persona" />
+        <PersonaHeaderViewItem Id="PersonaHeaderText" IsNewNode="True" />
+        <PersoneAggiugniViewItem Id="PersoneAgiugni" IsNewNode="True" />
+        <PersoneRimuoviViewItem Id="PersoneRimuovi" IsNewNode="True" />
+      </Items>
+      <Layout>
+        <LayoutGroup Id="Main" RelativeSize="100">
+          <LayoutGroup Id="SimpleEditors" RelativeSize="100">
+            <LayoutItem Id="PersonaHeaderText" ViewItem="PersonaHeaderText" Index="0" RelativeSize="4.090909090909091" IsNewNode="True" />
+            <LayoutGroup Id="Persona" Index="1" RelativeSize="95.9090909090909" Caption="Filtro">
+              <LayoutGroup Id="Persona_col1" RelativeSize="49.65909090909091">
+                <LayoutItem Id="Area" RelativeSize="4.477611940298507" CaptionLocation="Left" />
+                <LayoutItem Id="Categoria" RelativeSize="3.2338308457711444" CaptionLocation="Left" />
+                <LayoutItem Id="Stati" RelativeSize="3.2338308457711444" CaptionLocation="Left" />
+                <LayoutItem Id="Percosi" RelativeSize="3.2338308457711444" CaptionLocation="Left" />
+                <LayoutItem Id="Settori" RelativeSize="3.2338308457711444" CaptionLocation="Left" />
+                <LayoutItem Id="Classi" ViewItem="Classi" Index="5" RelativeSize="3.2338308457711444" CaptionLocation="Left" IsNewNode="True" />
+                <LayoutItem Id="Eta" ViewItem="Eta" Index="6" RelativeSize="3.2338308457711444" CaptionLocation="Left" IsNewNode="True" />
+                <LayoutItem Id="CognomeNome" ViewItem="CognomeNome" Index="7" RelativeSize="3.2338308457711444" CaptionLocation="Left" IsNewNode="True" />
+                <LayoutItem Id="Persone" ViewItem="Persone" Index="8" RelativeSize="3.2338308457711444" CaptionLocation="Left" IsNewNode="True" />
+                <LayoutItem Id="Item1" Index="9" RelativeSize="64.17910447761194" IsNewNode="True" />
+                <LayoutGroup Id="Autofd870800-98d1-4426-8d2d-e0b6def3faea" ShowCaption="False" Caption="Autofd870800-98d1-4426-8d2d-e0b6def3faea(16)" Direction="Horizontal" Index="10" RelativeSize="5.472636815920398" IsNewNode="True">
+                  <LayoutItem Id="PersoneAgiugni" ViewItem="PersoneAgiugni" Index="0" RelativeSize="49.88558352402746" IsNewNode="True" />
+                  <LayoutItem Id="PersoneRimuovi" ViewItem="PersoneRimuovi" Index="1" RelativeSize="50.11441647597254" IsNewNode="True" />
+                </LayoutGroup>
+              </LayoutGroup>
+              <LayoutGroup Id="Persona_col2" RelativeSize="50.34090909090909" Caption="Persona_col2">
+                <LayoutItem Id="CognomeNome" RelativeSize="17.171717171717173" Index="0" Removed="True" />
+                <LayoutItem Id="Eta" RelativeSize="19.767441860465116" Index="0" Removed="True" />
+                <LayoutItem Id="Persone" RelativeSize="100" Index="0" Removed="True" />
+                <LayoutItem Id="Selected" ViewItem="Selected" Index="0" RelativeSize="100" IsNewNode="True" />
+                <LayoutItem Id="Classi" RelativeSize="23.28767123287671" Removed="True" />
+              </LayoutGroup>
+            </LayoutGroup>
+          </LayoutGroup>
+          <TabbedGroup Id="Tabs" RelativeSize="10.511363636363637" Removed="True">
+            <LayoutGroup Id="Movimentii" Index="0" RelativeSize="100" Removed="True">
+              <LayoutItem Id="Movimentii" RelativeSize="100" />
+            </LayoutGroup>
+            <LayoutGroup Id="Selected" Removed="True" />
+          </TabbedGroup>
+        </LayoutGroup>
+      </Layout>
+    </DetailView>
+    <ListView Id="Persona_Movimentii_ListView">
+      <Columns>
+        <ColumnInfo Id="Articoli" Index="-1" />
+        <ColumnInfo Id="AssegnataryHoder" Index="-1" />
+        <ColumnInfo Id="Categorie" Index="-1" />
+        <ColumnInfo Id="Causali" Index="-1" />
+        <ColumnInfo Id="Data" Index="-1" />
+        <ColumnInfo Id="Documenti" Index="-1" />
+        <ColumnInfo Id="Eventi" Index="-1" />
+        <ColumnInfo Id="Fine" Index="-1" />
+        <ColumnInfo Id="Inizio" Index="-1" />
+        <ColumnInfo Id="PianiPagamento" Index="-1" />
+        <ColumnInfo Id="Saldo" Index="-1" />
+        <ColumnInfo Id="Strumenti" Index="-1" />
+      </Columns>
+    </ListView>
+    <ListView Id="Persona_Selected_ListView">
+      <HiddenActions>
+        <ActionLink ActionId="OpenForm" IsNewNode="True" />
+        <ActionLink ActionId="RegistraPagamenti" IsNewNode="True" />
+      </HiddenActions>
+    </ListView>
+  </Views>
+</Application>

@@ -1,0 +1,17 @@
+﻿<h3>Seleziona Movimenti</h3>
+
+<div>
+    <label><b>1. </b> Definisci un filtro per aggiungere o rimuovere un gruppo movimenti</label>
+</div>
+<div>
+    <label><b>2. </b> Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua</label>
+</div>
+<div>
+    <label><b>3. </b> Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo</label>
+</div>
+
+@code {
+    [Parameter] public MovimentiHeaderModel ComponentModel { get; set; }
+    public static RenderFragment Create(MovimentiHeaderModel componentModel) =>
+        @<MovimentiHeader ComponentModel=@componentModel />;
+}
